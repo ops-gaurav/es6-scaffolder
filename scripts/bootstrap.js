@@ -2,9 +2,7 @@
 
 var menu = require ('console-menu');
 var chalk = require ('chalk');
-var shell = require ('child_process').exec;
 var spawn = require ('child_process').spawn;
-var util = require ('util');
 var path = require ('path');
 var controller = require ('../action.controller');
 var constants = require ('../constants');

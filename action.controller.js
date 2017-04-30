@@ -1,7 +1,7 @@
 var chalk = require ('chalk');
 var constants = require ('./constants');
 /**
- * spwn is an EventEmitter object. Using spawn we can listen to
+ * spawn is an EventEmitter object. Using spawn we can listen to
  * stdout/stderr events and hence can display live.
  */
 var spawn = require ('child_process').spawn;
