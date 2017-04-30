@@ -1,6 +1,6 @@
 {
   "name": "es6-scaffolder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The repository is WIP es6-scaffold is a node js es6 scaffolding tool to scaffold the basic structure of nodejs app",
   "main": "index.js",
   "scripts": {
