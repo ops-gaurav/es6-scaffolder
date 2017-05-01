@@ -26,3 +26,21 @@ module.exports.execBasecampScript = function (next) {
         next ();
     })
 }
+
+
+/**
+ * for angularJS scaffolding URL
+ */
+module.exports.execBasecampAngularScript = function (next) {
+    var command = spawn ('git', ['clone', constants.es6BasecampAngularRepo]);
+
+    command.stdout.pipe (process.stdout);
+    command.stderr.pipe (process.stderr);
+
+    command.on ('exit', (code) => {
+        if (code == 128)
+            console.log (chalk.red('scaffolding already exists.. terminating'));
+        
+        next();
+    });
+}

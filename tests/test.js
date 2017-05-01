@@ -1,6 +1,7 @@
 var assert = require ('assert');
 var shell = require ('shelljs');
 var chalk = require ('chalk');
+
 var myController = require ('../action.controller');
 
 describe ('Array', () => {
@@ -30,4 +31,26 @@ describe ('action.controller', function (){
             });
         })
     })
+});
+
+/**
+ * test for es6-basecamp with angular fetching
+ * unit test for basecampAngular
+ */
+
+describe ('action.controller', function () {
+    this.timeout (20000);
+
+    describe ('#es6BasecampAngular', function () {
+        it ('It should clone a repository in es6-basecamp-angular', function (done) {
+            
+            myController.execBasecampAngularScript (() => {
+
+                console.log (chalk.green ('scaffold success'));
+                done ();
+
+            });
+
+        });
+    });
 });
