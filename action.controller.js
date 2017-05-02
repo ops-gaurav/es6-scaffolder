@@ -34,8 +34,13 @@ module.exports.execBasecampScript = function (next) {
 module.exports.execBasecampAngularScript = function (next) {
     var command = spawn ('git', ['clone', constants.es6BasecampAngularRepo]);
 
-    command.stdout.pipe (process.stdout);
-    command.stderr.pipe (process.stderr);
+    command.stdout.on ('data', (data) => {
+        console.log (chalk.green (data));
+    });
+
+    command.stdout.on  ('data', (data) => {
+        console.error (chalk.red (data));
+    });
 
     command.on ('exit', (code) => {
         if (code == 128)
