@@ -65,3 +65,33 @@ module.exports.postCloningScript = function (directory) {
         }
     });
 }
+
+/**
+ * script to update es6-scaffolder
+ */
+module.exports.updateScript = function (version) {
+    console.log (chalk.green ('Updating your es6-scaffold to '+ version));
+
+    var updateCommand = spawn ('npm', ['uninstall', '-g', 'es6-scaffolder']);
+
+    updateCommand.stderr.pipe (process.stderr);
+    updateCommand.stdout.pipe (process.stdout);
+
+    updateCommand.on ('exit', (code) => {
+        if (code == 0) {
+            updateCommand = spawn ('npm', ['install', '-g', 'es6-scaffolder']);
+
+            updateCommand.stderr.pipe (process.stderr);
+            updateCommand.stdout.pipe (process.stdout);
+
+            updateCommand.on ('exit', (code) => {
+                if (code == 0)
+                    console.log (chalk.green ('scaffolder has been updated to '+ version));
+                else 
+                    console.log (chalk.red ('Error occured while updating to '+ version));
+            });
+        } else {
+            console.log (chalk.red ('Error occured while updationg to version '+ version));
+        }
+    });
+}
