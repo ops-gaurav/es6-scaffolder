@@ -42,11 +42,15 @@ describe ('action.controller', function () {
     this.timeout (20000);
 
     describe ('#es6BasecampAngular', function () {
-        it ('It should clone a repository in es6-basecamp-angular', function (done) {
+        it ('It should clone a repository in es6-basecamp-angular and then remove it.', function (done) {
             
             myController.execBasecampAngularScript (() => {
 
                 console.log (chalk.green ('scaffold success'));
+                console.log (chalk.red ('Removing the scaffold now..'))
+                
+                shell.rm ('-Rf', 'es6-basecamp-angular');
+                console.log (chalk.green ('DONE!!'));
                 done ();
 
             });

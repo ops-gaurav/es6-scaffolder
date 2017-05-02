@@ -23,22 +23,10 @@ menu ([
                 console.log (chalk.grey ('Installing es6-basecamp scaffold'));
 
                 controller.execBasecampScript (() => {
-                    console.log (chalk.green('Done creating scaffold'));
-                    console.log (chalk.green ('configuring your scaffold') );
 
                     var directory = path.resolve()+path.sep+'es6-basecamp';
-                    var npmInstall = spawn ('npm', ['--prefix', directory ,'install', directory]);
 
-                    npmInstall.stderr.pipe (process.stderr);
-                    npmInstall.stdout.pipe (process.stdout);
-
-                    npmInstall.on ('exit', function (code) {
-                        if (code == 0) {
-                            console.log (chalk.green ('DONE!'))
-                        } else {
-                            console.log (chalk.red ('Some error: '+ code));
-                        }
-                    });
+                    controller.postCloningScript (directory);
                 });
 
                 break;
@@ -47,23 +35,12 @@ menu ([
                 console.log (chalk.grey ('Installing es6-basecamp for Angular'));
 
                 controller.execBasecampAngularScript (() => {
-                    console.log (chalk.green('Done creating scaffold'));
-                    console.log (chalk.green ('configuring your scaffold') );
+                    var directory = path.resolve()+path.sep+'es6-basecamp-angular';
 
-                    var directory = path.resolve()+path.sep+'es6-basecamp';
-                    var npmInstall = spawn ('npm', ['--prefix', directory ,'install', directory]);
-
-                    npmInstall.stderr.pipe (process.stderr);
-                    npmInstall.stdout.pipe (process.stdout);
-
-                    npmInstall.on ('exit', function (code) {
-                        if (code == 0) {
-                            console.log (chalk.green ('DONE!'))
-                        } else {
-                            console.log (chalk.red ('Some error: '+ code));
-                        }
-                    });
+                    controller.postCloningScript (directory);
                 });
+
+                break;
             default: 
                 console.log (chalk.blue('Work in progress. :('));
         }

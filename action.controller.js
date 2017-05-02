@@ -44,3 +44,24 @@ module.exports.execBasecampAngularScript = function (next) {
         next();
     });
 }
+
+/**
+ * the common script to execute after cloning a repo
+ */
+module.exports.postCloningScript = function (directory) {
+    console.log (chalk.green('Done creating scaffold'));
+    console.log (chalk.green ('configuring your scaffold') );
+
+    var npmInstall = spawn ('npm', ['--prefix', directory ,'install', directory]);
+
+    npmInstall.stderr.pipe (process.stderr);
+    npmInstall.stdout.pipe (process.stdout);
+
+    npmInstall.on ('exit', function (code) {
+        if (code == 0) {
+            console.log (chalk.green ('DONE!'))
+        } else {
+            console.log (chalk.red ('Some error: '+ code));
+        }
+    });
+}
