@@ -79,6 +79,16 @@ if (process.argv.length > 2) {
                     });
 
                     break;
+                
+                case '3':
+                    //installing es6 with angular2 Typescript and Bootstrap
+                    console.log (chalk.grey ('Installing es6-basecamp-angular2 with Typescript and Bootstrap'));
+
+                    controller.execBasecampAngular2Script (() => {
+                        var directory = path.resolve()+ path.sep + 'es6-basecamp-angular2';
+
+                        controller.postCloningScript (directory);
+                    });
                 default: 
                     console.log (chalk.blue('Work in progress. :('));
             }
