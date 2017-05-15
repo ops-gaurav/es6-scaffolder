@@ -28,3 +28,4 @@ If you are running es6-scaffold older than <b>1.0.44 </b>, then you have to remo
 #### Currently supported scaffolds
 * NodeJS - Express Scaffold with ES6
 * NodeJS - Express - Angular Scaffold with ES6
+* NodeJS - Express - Angular2 - Typescript - Bootstrap with ES6
