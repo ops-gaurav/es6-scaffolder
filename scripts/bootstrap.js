@@ -9,6 +9,8 @@ var latestVersion = require ('latest-version');
 var controller = require ('../action.controller');
 var constants = require ('../constants');
 
+var fs = require ('fs');
+
 var packageJson = require ('../package.json');
 
 
@@ -85,10 +87,18 @@ if (process.argv.length > 2) {
                     console.log (chalk.grey ('Installing es6-basecamp-angular2 with Typescript and Bootstrap'));
 
                     controller.execBasecampAngular2Script (() => {
-                        var directory = path.resolve()+ path.sep + 'es6-basecamp-angular2';
+                        var directory = path.resolve()+ path.sep + 'es6-basecamp-angular2'+ path.sep;
 
                         controller.postCloningScript (directory);
                     });
+                    break;
+                case '?':
+                    console.log ('es6-scaffolder Help?');
+                    fs.readFile ('console-help.txt', (err, data) => {
+                        if (err) throw err;
+                        console.log (data.toString());
+                    })
+                    break;
                 default: 
                     console.log (chalk.blue('Work in progress. :('));
             }

@@ -50,6 +50,9 @@ module.exports.execBasecampAngularScript = function (next) {
     });
 }
 
+/**
+ * the script to configure angular2 basecamp with Typescript and bootstrap
+ */
 module.exports.execBasecampAngular2Script = function (next) {
     var command = spawn ('git', ['clone', constants.es6BasecampAngular2Repo]);
 
@@ -61,7 +64,7 @@ module.exports.execBasecampAngular2Script = function (next) {
             console.log (chalk.red ('scaffolding already exists.. terminating'));
 
         next();
-    })
+    });
 }
 
 
@@ -74,15 +77,43 @@ module.exports.postCloningScript = function (directory) {
 
     var npmInstall = spawn ('npm', ['--prefix', directory ,'install', directory]);
 
-    npmInstall.stderr.pipe (process.stderr);
-    npmInstall.stdout.pipe (process.stdout);
+    npmInstall.stdout.on ('data', (data) => console.log (chalk.green (data)));
+    npmInstall.stderr.on ('data', (data) => console.log (chalk.red (data)));
+
+    // npmInstall.stderr.pipe (process.stderr);
+    // npmInstall.stdout.pipe (process.stdout);
 
     npmInstall.on ('exit', function (code) {
         if (code == 0) {
             console.log (chalk.green ('DONE!'))
+            
+            /**
+             * after cloning.. remove the git support from the directory
+             */
+            removeGitSupport (directory);
         } else {
             console.log (chalk.red ('Some error: '+ code));
         }
+    });
+}
+
+/**
+ * script to remove the git repo support in the cloned repo. Run this after postCloningScript
+ * @param {string} directory 
+ */
+function removeGitSupport (directory) {
+    console.log (chalk.green ('removing remote git'));
+
+    var script = spawn ('rm', ['-rf', directory+'.git']);
+
+    script.stdout.on ('data', (data) => console.log (chalk.green (data)));
+    script.stderr.on ('data', (data) => console.log (chalk.red (data)));
+    
+    script.on ('exit', (code) => {
+        if (code == 0)
+            console.log (chalk.green ('Configured'));
+        else
+            console.log (chalk.red ('error removing git from repo'));
     });
 }
 
