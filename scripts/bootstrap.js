@@ -48,7 +48,7 @@ if (process.argv.length > 2) {
     menu ([
         { hotkey: '1', title: 'es6-basecamp', selected: true },
         { hotkey: '2', title: 'es6-basecamp with Angular 1' },
-        { hotkey: '3', title: 'es6-basecamp with Angular 2'},
+        { hotkey: '3', title: 'es6-basecamp with Angular 2 + webpack'},
         { separator: true },
         { hotkey: '?', title: 'Help' }
     ], {
