@@ -1,0 +1,22 @@
+Scaffolder Help Document
+--------------------------------------------------------------
+
+INTRODUCTION
+Scaffolder is a nodejs application structure builder based on the best design pattern approach. The scaffolder is basically used to scaffold the basic nodejs apps with ES6 feature. The scaffolder uses the babel engine to to run nodejs code in ES6 format.
+
+
+COMMANDS
+1. scaffold : to start the scaffold application.
+2. scaffold version : to check the scaffolder version.
+3. scaffold check-update : to check the latest update
+4. scaffold update : to update the existing scaffold to a newer one
+
+
+-------------------------------------------------------------
+DEVELOPER
+Gaurav Sharma
+INDIA
+sharma02gaurav@gmail.com
++91-9041766560
+sharma02gaurav.wordpress.com
+--------------------------------------------------------------

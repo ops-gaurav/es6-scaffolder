@@ -9,6 +9,8 @@ var latestVersion = require ('latest-version');
 var controller = require ('../action.controller');
 var constants = require ('../constants');
 
+var fs = require ('fs');
+
 var packageJson = require ('../package.json');
 
 
@@ -78,6 +80,24 @@ if (process.argv.length > 2) {
                         controller.postCloningScript (directory);
                     });
 
+                    break;
+                
+                case '3':
+                    //installing es6 with angular2 webpack
+                    console.log (chalk.grey ('Installing es6-basecamp-angular2 with webpack'));
+
+                    controller.execBasecampAngular2Script (() => {
+                        var directory = path.resolve()+ path.sep + 'es6-basecamp-ng2-weback'+ path.sep;
+
+                        controller.postCloningScript (directory);
+                    });
+                    break;
+                case '?':
+                    console.log ('es6-scaffolder Help?');
+                    fs.readFile ('README.md', (err, data) => {
+                        if (err) throw err;
+                        console.log (data.toString());
+                    })
                     break;
                 default: 
                     console.log (chalk.blue('Work in progress. :('));

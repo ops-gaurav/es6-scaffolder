@@ -48,13 +48,14 @@ describe ('action.controller', function () {
 
                 console.log (chalk.green ('scaffold success'));
                 console.log (chalk.red ('Removing the scaffold now..'))
-                
+                ()
                 shell.rm ('-Rf', 'es6-basecamp-angular');
                 console.log (chalk.green ('DONE!!'));
                 done ();
 
             });
-
         });
     });
 });
+
+
