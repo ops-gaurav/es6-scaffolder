@@ -2,6 +2,10 @@
 #### Introduction
 Scaffolder is a nodejs application structure builder based on the best design pattern approach. The scaffolder is basically used to scaffold the basic nodejs apps with ES6 feature. The scaffolder uses the babel engine to to run nodejs code in ES6 format.
 
+
+> Now support for REACT JS scaffold with webpack
+you can respective documentations in the cloned scaffolds README.md files
+
 #### Installation
 1. Use the following command to install scaffolder CLI tool in your system.<br/>
 `npm install -g es6-scaffolder`
@@ -30,6 +34,3 @@ If you are running es6-scaffold older than <b>1.0.44 </b>, then you have to remo
 * NodeJS - Express - Angular Scaffold with ES6
 * Angular2 - Webpack - Typescript Scaffold
 * React - Webpack Scaffold
-
-> Now support for Angular 2 with webpack
-you can respective documentations in the cloned scaffolds README.md files
