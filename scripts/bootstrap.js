@@ -43,6 +43,12 @@ if (process.argv.length > 2) {
                 }
             });
             break;
+        /**
+         * addition to install scaffold components and addons
+         */
+        case 'install':
+
+            break;
         default:
             console.log (chalk.red ('invalid options provided'));
     }
@@ -51,6 +57,7 @@ if (process.argv.length > 2) {
         { hotkey: '1', title: 'es6-basecamp', selected: true },
         { hotkey: '2', title: 'es6-basecamp with Angular 1' },
         { hotkey: '3', title: 'es6-basecamp with Angular 2 + webpack'},
+        { hotkey: '4', title: 'React with webpack' },
         { separator: true },
         { hotkey: '?', title: 'Help' }
     ], {
@@ -88,6 +95,15 @@ if (process.argv.length > 2) {
 
                     controller.execBasecampAngular2Script (() => {
                         var directory = path.resolve()+ path.sep + 'es6-basecamp-ng2-weback'+ path.sep;
+
+                        controller.postCloningScript (directory);
+                    });
+                    break;
+                case '4':
+                    console.log (chalk.grey ('Installing React with webpack scaffold'));
+
+                    controller.execBasecampAngular2Script (() => {
+                        var directory = path.resolve()+ path.sep + 'basecamp-react' + path.sep;
 
                         controller.postCloningScript (directory);
                     });
