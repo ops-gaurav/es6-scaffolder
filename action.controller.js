@@ -68,7 +68,7 @@ module.exports.execBasecampAngular2Script = function (next) {
 }
 
 
-module.exports.execBasecampReactScrpt = function (next) {
+module.exports.execBasecampReactScript = function (next) {
     var command = spawn ('git', ['clone', constants.reactRepo]);
 
     command.stdout.on ('data', data => console.log (chalk.green (data)));

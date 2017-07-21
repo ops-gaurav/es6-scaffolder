@@ -102,7 +102,7 @@ if (process.argv.length > 2) {
                 case '4':
                     console.log (chalk.grey ('Installing React with webpack scaffold'));
 
-                    controller.execBasecampAngular2Script (() => {
+                    controller.execBasecampReactScript (() => {
                         var directory = path.resolve()+ path.sep + 'basecamp-react' + path.sep;
 
                         controller.postCloningScript (directory);
