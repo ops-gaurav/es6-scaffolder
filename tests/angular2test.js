@@ -12,7 +12,9 @@ describe ('testing action.controller', function () {
 	this.timeout (20000);
 
 	describe ('#es6BasecampAngular2', () => {
-		it ('should clone a repository in es6-basecamp-angular2 and then remove it', (done) => {
+
+		// TEST case 1
+		it.skip ('should clone a repository in es6-basecamp-angular2 and then remove it', (done) => {
 			myController.execBasecampAngular2Script (() => {
 				console.log (chalk.green ('scaffold success'));
                 console.log (chalk.red ('Removing the scaffold now..'))

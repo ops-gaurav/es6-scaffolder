@@ -68,6 +68,20 @@ module.exports.execBasecampAngular2Script = function (next) {
 }
 
 
+module.exports.execBasecampReactScript = function (next) {
+    var command = spawn ('git', ['clone', constants.reactRepo]);
+
+    command.stdout.on ('data', data => console.log (chalk.green (data)));
+    command.stderr.on ('data', data => console.error (chalk.red (data)));
+
+    command.on ('exit', code => {
+        if (code == 128)
+            console.log (chalk.red ('scaffolding already exists.terminating'))
+
+        next();
+    })
+};
+
 /**
  * the common script to execute after cloning a repo
  */
