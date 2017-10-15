@@ -58,6 +58,7 @@ if (process.argv.length > 2) {
         { hotkey: '2', title: 'es6-basecamp with Angular 1' },
         { hotkey: '3', title: 'es6-basecamp with Angular 2 + webpack'},
         { hotkey: '4', title: 'React with webpack' },
+        { hetkey: '5', title: 'ES6 NodeJS, Angular2 and Passport Authentication (Standalone) '},
         { separator: true },
         { hotkey: '?', title: 'Help' }
     ], {
@@ -108,6 +109,15 @@ if (process.argv.length > 2) {
                         controller.postCloningScript (directory);
                     });
                     break;
+                case '5':
+                    // TODO implement here
+                    console.log (chalk.grey ('Installing ES6 Node, Angular 2, Passport Standalone scaffold.'))
+                    
+                    controller.execENA2PassScript (() => {
+                        const directory = path.resolve()+ path.sep + 'my-express-angular2-app'+ path.sep;
+
+                        controller.postCloningScript (directory);
+                    })
                 case '?':
                     console.log ('es6-scaffolder Help?');
                     fs.readFile ('README.md', (err, data) => {

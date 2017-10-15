@@ -83,6 +83,23 @@ module.exports.execBasecampReactScript = function (next) {
 };
 
 /**
+ * ES6, Node, Angular2, Passport scaffold
+ * https://github.com/sharma02gaurav/ENA2Pass-scaffold
+ */
+module.exports.execENA2PassScript = next => {
+    const command = spawn ('git', ['clone', constants.ENA2Pass]);
+
+    command.stdout.on ('data', data => console.log (chalk.green (data)));
+    command.stderr.on ('data', data => console.error (chalk.red (data)));
+
+    command.on ('exit', code => {
+        if (code === 128) console.log (chalk.red ('Scaffold already exists. Terminating'))
+
+        next();
+    })
+}
+
+/**
  * the common script to execute after cloning a repo
  */
 module.exports.postCloningScript = function (directory) {
