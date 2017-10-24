@@ -57,7 +57,7 @@ module.exports.execBasecampAngular2Script = function (next) {
     var command = spawn ('git', ['clone', constants.es6BasecampAngular2Repo]);
 
     command.stdout.on ('data', (data) => console.log (chalk.green (data)));
-    command.stderr.on ('data', (data) => console.error (chalk.red (data)));
+    command.stderr.on ('data', (data) => console.error (chalk.blue (data)));
 
     command.on ('exit', (code) => {
         if (code == 128)
@@ -72,7 +72,7 @@ module.exports.execBasecampReactScript = function (next) {
     var command = spawn ('git', ['clone', constants.reactRepo]);
 
     command.stdout.on ('data', data => console.log (chalk.green (data)));
-    command.stderr.on ('data', data => console.error (chalk.red (data)));
+    command.stderr.on ('data', data => console.error (chalk.blue (data)));
 
     command.on ('exit', code => {
         if (code == 128)
@@ -90,7 +90,7 @@ module.exports.execENA2PassScript = next => {
     const command = spawn ('git', ['clone', constants.ENA2Pass]);
 
     command.stdout.on ('data', data => console.log (chalk.green (data)));
-    command.stderr.on ('data', data => console.error (chalk.red (data)));
+    command.stderr.on ('data', data => console.error (chalk.blue (data)));
 
     command.on ('exit', code => {
         if (code === 128) console.log (chalk.red ('Scaffold already exists. Terminating'))
@@ -109,7 +109,7 @@ module.exports.postCloningScript = function (directory) {
     var npmInstall = spawn ('npm', ['--prefix', directory ,'install', directory]);
 
     npmInstall.stdout.on ('data', (data) => console.log (chalk.green (data)));
-    npmInstall.stderr.on ('data', (data) => console.log (chalk.red (data)));
+    npmInstall.stderr.on ('data', (data) => console.log (chalk.blue (data)));
 
     // npmInstall.stderr.pipe (process.stderr);
     // npmInstall.stdout.pipe (process.stdout);
