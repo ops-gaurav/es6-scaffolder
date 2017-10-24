@@ -58,7 +58,7 @@ if (process.argv.length > 2) {
         { hotkey: '2', title: 'es6-basecamp with Angular 1' },
         { hotkey: '3', title: 'es6-basecamp with Angular 2 + webpack'},
         { hotkey: '4', title: 'React with webpack' },
-        { hetkey: '5', title: 'ES6 NodeJS, Angular2 and Passport Authentication (Standalone) '},
+        { hotkey: '5', title: 'ES6 NodeJS, Angular2 and Passport Authentication (Standalone) '},
         { separator: true },
         { hotkey: '?', title: 'Help' }
     ], {
