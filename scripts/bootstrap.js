@@ -114,7 +114,7 @@ if (process.argv.length > 2) {
                     console.log (chalk.grey ('Installing ES6 Node, Angular 2, Passport Standalone scaffold.'))
                     
                     controller.execENA2PassScript (() => {
-                        const directory = path.resolve()+ path.sep + 'my-express-angular2-app'+ path.sep;
+                        const directory = path.resolve()+ path.sep + 'ENA2Pass-scaffold'+ path.sep;
 
                         controller.postCloningScript (directory);
                     })
