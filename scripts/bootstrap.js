@@ -118,6 +118,7 @@ if (process.argv.length > 2) {
 
                         controller.postCloningScript (directory);
                     })
+                    break;
                 case '?':
                     console.log ('es6-scaffolder Help?');
                     fs.readFile ('README.md', (err, data) => {
