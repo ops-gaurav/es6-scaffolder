@@ -41,3 +41,4 @@ If you are running es6-scaffold older than <b>1.0.44 </b>, then you have to remo
 * NodeJS - Express - Angular Scaffold with ES6
 * Angular2 - Webpack - Typescript Scaffold
 * React - Webpack Scaffold
+* React - Express - Passport - Webpack Scaffold
