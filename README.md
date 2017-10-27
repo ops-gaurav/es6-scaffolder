@@ -1,4 +1,5 @@
 # Scaffolder
+[![npm](https://img.shields.io/npm/dt/es6-scaffolder.svg)](https://www.npmjs.com/package/krypt-master) [![GitHub stars](https://img.shields.io/github/stars/sharma02gaurav/es6-scaffolder.svg?style=social&label=Star)](https://github.com/kamalkdolikay/krypt-master/tree/dev2)
 <p align="center">
   <img src="https://image.slidesharecdn.com/4-es6metbabel-150513100342-lva1-app6891/95/es6-with-babeljs-1-638.jpg?cb=1431511634" width="200"/>
   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" width="200"/>
