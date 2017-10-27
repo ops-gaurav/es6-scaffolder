@@ -7,12 +7,28 @@
   "scripts": {
     "test": "mocha tests/test"
   },
+  "contributes": {
+    "Gaurav Sharma <sharma02gaurav@gmail.com>"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sharma02gaurav/es6-scaffolder.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "es6",
+    "es-6",
+    "scaffolder",
+    "node",
+    "react",
+    "angular",
+    "angular2",
+    "directory structure",
+    "application scaffold",
+    "es6 node",
+    "builder",
+    "generator"
+  ],
+  "author": "Gaurav Sharma <sharma02gaurav@gmail.com>",
   "license": "ISC",
   "bin": {
     "scaffold": "scripts/bootstrap.js"
