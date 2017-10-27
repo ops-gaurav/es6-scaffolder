@@ -1,6 +1,6 @@
 {
   "name": "es6-scaffolder",
-  "version": "1.0.86",
+  "version": "1.0.87",
   "description": "ES6 Scaffolding tool for generating es6 supported web apps in nodejs.",
   "main": "index.js",
   "readme": "README.md",
