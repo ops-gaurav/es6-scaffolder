@@ -1,10 +1,6 @@
 {
   "name": "es6-scaffolder",
-<<<<<<< HEAD
-  "version": "1.0.61",
-=======
   "version": "1.0.73",
->>>>>>> 6d36a0815735a0a6d22e7f1916058f36dd4bc5d9
   "description": "ES6 Scaffolding tool for generating es6 supported web apps in nodejs.",
   "main": "index.js",
   "readme": "README.md",
@@ -27,6 +23,7 @@
   "homepage": "https://github.com/sharma02gaurav/es6-scaffolder#readme",
   "dependencies": {
     "chalk": "^1.1.3",
+    "commander": "^2.14.1",
     "console-menu": "^0.1.0",
     "latest-version": "^3.1.0"
   },
